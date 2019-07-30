@@ -1,0 +1,46 @@
+﻿@model GerenciadorDeTarefas.Models.Tarefa
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h3 class="mt-3">Excluir Tarefa</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataExpiracao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataExpiracao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-danger" /> |
+            @Html.ActionLink("Cancelar", "Listar", null, new { @class = "btn btn-light"})
+        </div>
+    }
+</div>
